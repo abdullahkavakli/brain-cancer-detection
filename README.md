@@ -13,4 +13,5 @@ You can find exaple photos here: https://www.kaggle.com/datasets/sartajbhuvaji/b
 - Place it under /models/saved_model/variables/
 - Install Python requirements `pip install -r requirements.txt`
 - Start the server for development `python3 main.py`
-
+<br>
+**Attention!! This web application is intended solely for educational purposes and should not be used as a substitute for medical advice. It is strongly advised that you consult with a qualified healthcare provider for a proper diagnosis and treatment of any potential brain tumor or related health concerns.**
