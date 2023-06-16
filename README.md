@@ -1,21 +1,12 @@
----
-title: Flask
-description: A popular minimal server framework for Python
-tags:
-  - python
-  - flask
----
+# Python Flask App Brain Tumor Detection
 
-# Python Flask Example
-
-This is a [Flask](https://flask.palletsprojects.com/en/1.1.x/) app that serves a simple JSON response.
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/zUcpux)
+You can find exaple photos here: https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
 
 ## ✨ Features
 
 - Python
 - Flask
+- TensorFlow
 
 ## 💁‍♀️ How to use
 
