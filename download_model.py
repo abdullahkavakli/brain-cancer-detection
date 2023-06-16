@@ -1,11 +1,7 @@
-def deneme():
-    print("a")
-
 def download():
     import requests
 
-
-    url = "https://www.kaggleusercontent.com/kf/125026100/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Ks8dL7xf0ZF0wcA8mopzdA.V9juVYZRxBhM2hQAgeYhjPVp3JCSaoQ_KtPrfF6nTzHQ_hSR4xKyD3a5Y-OC9YDq-MkpllBKNFTWEWjO9VbyaZ7D0hbbd5DBv3CIFw33yLLGMSBiSWs4mpMmh6mbN9FoPWDy_Zxmk5G0bw6socQuvgueJYcGvtyL7-boobQOC9qNHlYy7F8P1_EjTVqYI3mrEWaFp3g08xvKsuYXec11FkGeCjmBsjxf5P33FAz6ljYPjON7qxSTDMROjslLWdaSHSgroO0A1q9ftz8wLnl7I4u_7d-Tl_iqOnkUsOJwJEXc_StoH5oQOuC29dzSG0GXUFwiUCvJYzDEuLMrxc0RaqYZVbzbqNuC-83i46vFBe63VozxZzS25YMVPYgiZYveEd2mKRKF9xSAoc8pg2R0IS_IovId_uEj4qnxg__1Ns2ui6fTqVmcoAgHUJqVb2Od9_ktnIzZ3Ncsa4bRKgs0wpSS7jTzCedIZY87U-NFewLFevw0lIeKn3zUwxAP-_xjGkQew7ahZgzIZ5DU3OBAyhQqpPyDPBgkoCdLVuL89A8W8pK5X1RtQgoQJN9keOALBJwB7OCzFDwztluHBU41RQsQbi-rAr5NMpwLgM2R_UTrCEMSoF0hk6bpCSat1nzfi4VWOi6M0QBQAFhiw-jEvcFaNz17gFXPCeI7I7ULPStcpLGbIyAoPVgxnB5pqJed.f5KDBRGDg_J8TAzRG9pv1A/saved_model/variables/variables.data-00000-of-00001"
+    url = "https://www.kaggleusercontent.com/kf/125026100/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..mUENGMsYojVEXqAxQRZ9RQ.ToilM-lIk2wZNY40UeKB96hsrQZYjFSuhX7bOFgNr2GtWZL9ftbxpxVK-_rB4t_P6CXiylExaPcqQXd0N6hbc_uZMHdFHfxvjEzS5g8SFRfcp2YXgyob6Q-dMyB1MhH4KqeSmLfeFbbML3WFbXlCeYyf9VUhvJV7bMm7GPrfUZZiZSWxnh15dM5UOjGLzTfW1elxEXeb2zuB5zcEZ5wbq7LHrdmDVVbtle41Pg_PkYGYY3x6-OAKwtWb_MKM-LXi9bgpzrG-DZvwbmqHq_LNVDPj8S_j4ELmr-B3sX7Z6J4krOL0xzOuHS7S4QcSeSU5dYviKSSfhH-cmuopri8YWkaEOZ6Yky4qHBHUuHEhiT2cizxlwGhST4UhFxcJJBDd2NulQcMiF9xCiw_CziFAAy-dF5TSm3skiXX-dvSHwh3z_7DMFVAuq3yBF_MMaD3VYT1dV3IASnYGCCKaiQZYxdu7I79e2jgXsPx0bqQnIYVXoib_oJg1eDmz9RvL7Dx6v9Zx6ms35nUiZzdWYzhU3THFRrr8kdmHidinMxx41vOV8tiTBOBCaniwGX6ufMSoRT4ZdVp9RKX22swUQ7v6awE89X8Cqzjbxg-DABZvO9mlkdJxOO2ZoTcvoKmvjAfpalX_bwdRMebQqLVJwUka4DKcXL6jjG7BKRkRa_v0rBGcXawpcUeah2v8C0KM9pK1.f14eGmEMG3BDA6pz9a58iQ/saved_model/variables/variables.data-00000-of-00001"
 
     payload = {}
     headers = {
@@ -29,5 +25,8 @@ def download():
 
     a = response.content
 
-    with open("model/saved_model/variables/variables.data-00000-of-00001", "wb") as file1:
+    with open("models/saved_model/variables/variables.data-00000-of-00001", "wb") as file1:
         file1.write(a)
+
+if __name__ == "__main__":
+    download()

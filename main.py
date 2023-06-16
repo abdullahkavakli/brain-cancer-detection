@@ -1,22 +1,22 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
 import tensorflow as tf
-import cv2
-import download_model
+import os
+from PIL import Image
 
-download_model.download()
+IMG_SIZE= 180
+
+def file_exists():
+    return os.path.exists(os.getcwd()+"/models/saved_model/variables/variables.data-00000-of-00001")
+if not file_exists():
+    raise Exception("Please download the model.")
+    # You can download from here: https://www.kaggle.com/code/abdullahkavakli/brain-tumor-classification-with-cnn/output?scriptVersionId=125026100
+    # The file is variables.data-00000-of-00001
+    # Place it under /models/saved_model/variables/
+
+model = tf.keras.models.load_model('models/saved_model')
 
 app = Flask(__name__)
-model =tf.keras.models.load_model('models/saved_model')
-img_size= 180
-
-from PIL import Image
-def filestorage_to_array(file_storage):
-    # Open the image using PIL
-    image = Image.open(file_storage)
-    image_array = np.array(image)
-    return image_array
 
 @app.route('/')
 def home():
@@ -25,10 +25,11 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     picture = request.files["selectedPicture"]
-
-    image_array = filestorage_to_array(picture)
-    data = cv2.resize(np.array(image_array), (img_size,img_size))
-    data_reshaped = np.reshape(data, (1,img_size,img_size,3))
+    image = Image.open(picture)
+    image_resized = image.resize((IMG_SIZE, IMG_SIZE))
+    
+    data = np.array(image_resized)
+    data_reshaped = np.reshape(data, (1,IMG_SIZE,IMG_SIZE,3))
     pred_prob = model.predict(data_reshaped)
     pred = np.argmax(pred_prob,axis=1)[0]
     labels = ["Glioma Tumor", "Meningioma Tumor",	"No Tumor",	"Pituitary Tumor"]
@@ -38,4 +39,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
