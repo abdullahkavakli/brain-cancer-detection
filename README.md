@@ -1,4 +1,4 @@
-# Python Flask App Brain Tumor Detection
+# Python Flask App - Brain Tumor Detection
 You can find exaple photos here: https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
 
 ## ✨ Features
