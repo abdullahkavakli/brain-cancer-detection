@@ -24,17 +24,19 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    picture = request.files["selectedPicture"]
-    image = Image.open(picture)
-    image_resized = image.resize((IMG_SIZE, IMG_SIZE))
-    
-    data = np.array(image_resized)
-    data_reshaped = np.reshape(data, (1,IMG_SIZE,IMG_SIZE,3))
-    pred_prob = model.predict(data_reshaped)
-    pred = np.argmax(pred_prob,axis=1)[0]
-    labels = ["Glioma Tumor", "Meningioma Tumor",	"No Tumor",	"Pituitary Tumor"]
-    predicted = labels[pred]
-
+    try:
+        picture = request.files["selectedPicture"]
+        image = Image.open(picture)
+        image_resized = image.resize((IMG_SIZE, IMG_SIZE))
+        
+        data = np.array(image_resized)
+        data_reshaped = np.reshape(data, (1,IMG_SIZE,IMG_SIZE,3))
+        pred_prob = model.predict(data_reshaped)
+        pred = np.argmax(pred_prob,axis=1)[0]
+        labels = ["Glioma Tumor", "Meningioma Tumor",	"No Tumor",	"Pituitary Tumor"]
+        predicted = labels[pred]
+    except Exception as e:
+        predicted = str(e)
     return render_template('index.html', prediction_text=predicted)
 
 
