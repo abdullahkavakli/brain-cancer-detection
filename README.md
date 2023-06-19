@@ -3,6 +3,8 @@
 
 You can find exaple photos here: https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
 
+Notebook of the model: https://www.kaggle.com/code/abdullahkavakli/brain-tumor-classification-with-cnn
+
 ## ✨ Features
 
 - Python
