@@ -1,5 +1,6 @@
 # Python Flask App - Brain Tumor Detection
-### Live demo: http://braincancerdetection.software/
+### Live demo: https://braincancerdetection.software/
+![Ekran Alıntısı](https://github.com/abdullahkavakli/brain-cancer-detection/assets/72142708/dbe8bea3-a83b-4df2-bba1-d6ff09585da9)
 
 You can find exaple photos here: https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
 
