@@ -13,7 +13,7 @@ Notebook of the model: https://www.kaggle.com/code/abdullahkavakli/brain-tumor-c
 - Flask
 - TensorFlow
 
-## 💁‍♀️ How to use
+## 🔑 How to use
 - Download the variables.data-00000-of-00001 file from here: https://www.kaggle.com/code/abdullahkavakli/brain-tumor-classification-with-cnn/output?
 - Place it under /models/saved_model/variables/
 - Install Python requirements `pip install -r requirements.txt`
